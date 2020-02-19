@@ -169,6 +169,7 @@ def graph_srev(ws, _len):
 
 def graph_im(ws, _len):
     
+    _len = _len + 1
     #-----------------------------------------------|
     # create chart
     c1 = LineChart()
@@ -283,6 +284,7 @@ def graph_im(ws, _len):
 
 def graph_sd(ws, _len):
     
+    _len = _len + 1
     #-----------------------------------------------|
     # create chart
     c1 = LineChart()

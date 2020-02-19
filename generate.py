@@ -97,8 +97,8 @@ def generate(sales_filename, report_dump_filename):
     # Active Subs
 
     try:
-        ASS_dl = listfilter.filter_for_month(whole[1]) #Done
-        ASS_DF = df_converter.ASS_list_to_df(ASS_dl) #Done
+        ASS_dl = listfilter.filter_for_month(whole[1]) 
+        ASS_DF = df_converter.ASS_list_to_df(ASS_dl) 
         wb.create_sheet('Active Subs')
         
         ws = wb['Active Subs']
@@ -117,8 +117,8 @@ def generate(sales_filename, report_dump_filename):
 
     # Call Detail Billable
     try:
-        CDB_dl = listfilter.filter_for_month(whole[2]) #Done
-        CDB_DF = df_converter.CDB_list_to_df(CDB_dl) #Done
+        CDB_dl = listfilter.filter_for_month(whole[2]) 
+        CDB_DF = df_converter.CDB_list_to_df(CDB_dl) 
         wb.create_sheet('Call Detail Billable')
         
         ws = wb['Call Detail Billable']
@@ -136,8 +136,8 @@ def generate(sales_filename, report_dump_filename):
     # Call Detail Non Billable
 
     try:
-        CDNB_dl = listfilter.filter_for_month(whole[3]) #Done
-        CDNB_DF = df_converter.CDNB_list_to_df(CDNB_dl) #Done
+        CDNB_dl = listfilter.filter_for_month(whole[3]) 
+        CDNB_DF = df_converter.CDNB_list_to_df(CDNB_dl) 
         wb.create_sheet('Call Detail Non Billable')
         
         ws = wb['Call Detail Non Billable']
@@ -155,8 +155,8 @@ def generate(sales_filename, report_dump_filename):
     # SMS Billable
 
     try:
-        SMSDB_dl = listfilter.filter_for_month(whole[4]) #Done
-        SMSDB_DF = df_converter.SMSDB_list_to_df(SMSDB_dl) #Done
+        SMSDB_dl = listfilter.filter_for_month(whole[4]) 
+        SMSDB_DF = df_converter.SMSDB_list_to_df(SMSDB_dl) 
         wb.create_sheet('SMS Billable')
         
         ws = wb['SMS Billable']
@@ -174,8 +174,8 @@ def generate(sales_filename, report_dump_filename):
     # SMS Non Billable
 
     try:
-        SMSDNB_dl = listfilter.filter_for_month(whole[5]) #Done
-        SMSDNB_DF = df_converter.SMSDNB_list_to_df(SMSDNB_dl) #Done
+        SMSDNB_dl = listfilter.filter_for_month(whole[5]) 
+        SMSDNB_DF = df_converter.SMSDNB_list_to_df(SMSDNB_dl) 
         wb.create_sheet('SMS Non Billable')
         
         ws = wb['SMS Non Billable']
@@ -193,8 +193,8 @@ def generate(sales_filename, report_dump_filename):
     # Data Billable Non Billable
 
     try:
-        GPRSBNB_dl = listfilter.filter_for_month(whole[6]) #Done
-        GPRSBNB_DF = df_converter.GPRSBNB_list_to_df(GPRSBNB_dl) #Done
+        GPRSBNB_dl = listfilter.filter_for_month(whole[6]) 
+        GPRSBNB_DF = df_converter.GPRSBNB_list_to_df(GPRSBNB_dl) 
         wb.create_sheet('Data Billable Non Billable')
         
         ws = wb['Data Billable Non Billable']
@@ -218,8 +218,8 @@ def generate(sales_filename, report_dump_filename):
     # Subscription Bundles
 
     try:
-        SD_dl = listfilter.filter_for_month(whole[7])  #Done
-        SD_DF = df_converter.SD_list_to_df(SD_dl) #Done
+        SD_dl = listfilter.filter_for_month(whole[7])  
+        SD_DF = df_converter.SD_list_to_df(SD_dl) 
         wb.create_sheet('Subscription Bundles')
         
         ws = wb['Subscription Bundles']
@@ -239,8 +239,8 @@ def generate(sales_filename, report_dump_filename):
     # Recharge by Subscribers
 
     try:
-        RbS_dl = listfilter.filter_for_month(whole[8]) #Done
-        RBS_DF = df_converter.RbS_list_to_df(RbS_dl) #Done
+        RbS_dl = listfilter.filter_for_month(whole[8]) 
+        RBS_DF = df_converter.RbS_list_to_df(RbS_dl) 
         wb.create_sheet('Recharge by Subscribers')
         
         ws = wb['Recharge by Subscribers']
@@ -260,8 +260,8 @@ def generate(sales_filename, report_dump_filename):
     # Balance Transfer
 
     try:
-        BT_dl = listfilter.filter_for_month(whole[9]) #Done
-        BT_DF = df_converter.BT_list_to_df(BT_dl) #Done
+        BT_dl = listfilter.filter_for_month(whole[9]) 
+        BT_DF = df_converter.BT_list_to_df(BT_dl) 
         wb.create_sheet('Balance Transfer')
         
         ws = wb['Balance Transfer']
@@ -282,8 +282,8 @@ def generate(sales_filename, report_dump_filename):
     # Recharge Method
 
     try:
-        RM_dl = listfilter.filter_for_month(whole[10]) #Done
-        RM_DF = df_converter.RM_list_to_df(RM_dl) #Done
+        RM_dl = listfilter.filter_for_month(whole[10]) 
+        RM_DF = df_converter.RM_list_to_df(RM_dl) 
         wb.create_sheet('Recharge Method')
         
         ws = wb['Recharge Method']
@@ -301,8 +301,8 @@ def generate(sales_filename, report_dump_filename):
     # Incoming Calls
 
     try:
-        IM_dl = listfilter.filter_for_month(whole[11]) #Done
-        IM_DF = df_converter.IM_list_to_df(IM_dl) #Done
+        IM_dl = listfilter.filter_for_month(whole[11]) 
+        IM_DF = df_converter.IM_list_to_df(IM_dl) 
         wb.create_sheet('Incoming Calls')
         
         ws = wb['Incoming Calls']
@@ -322,8 +322,8 @@ def generate(sales_filename, report_dump_filename):
     # Expired Resources Revenue
 
     try:
-        ERR_dl = listfilter.filter_for_month(whole[12]) #Done
-        ERR_DF = df_converter.ERR_list_to_df(ERR_dl) #Done
+        ERR_dl = listfilter.filter_for_month(whole[12]) 
+        ERR_DF = df_converter.ERR_list_to_df(ERR_dl) 
         wb.create_sheet('Expired Resources Revenue')
         
         ws = wb['Expired Resources Revenue']
@@ -344,8 +344,8 @@ def generate(sales_filename, report_dump_filename):
     # Corporate Plan Revenue
 
     try:
-        CP_dl = listfilter.filter_for_month(whole[14]) #Done
-        CP_DF = df_converter.CP_list_to_df(CP_dl) #Done    
+        CP_dl = listfilter.filter_for_month(whole[14]) 
+        CP_DF = df_converter.CP_list_to_df(CP_dl)    
         wb.create_sheet('Corporate Plan Revenue')
         
         ws = wb['Corporate Plan Revenue']
@@ -368,7 +368,7 @@ def generate(sales_filename, report_dump_filename):
     # Other CUG Gift Subs Deductions
 
     try:
-        oCUG_GSD_dl = listfilter.filter_for_month(whole[15]) #Done
+        oCUG_GSD_dl = listfilter.filter_for_month(whole[15]) 
         OCUG_GSD_DF = df_converter.oCUG_GSD_list_to_df(oCUG_GSD_dl) 
         wb.create_sheet('Other CUG Gift Subs Deductions')
         
@@ -390,8 +390,8 @@ def generate(sales_filename, report_dump_filename):
     # Recharge by Denomination
 
     try:
-        RVbD_dl = listfilter.filter_for_month(whole[16]) #Done
-        RVBD_DF = df_converter.RVbD_list_to_df(RVbD_dl) #Done
+        RVbD_dl = listfilter.filter_for_month(whole[16]) 
+        RVBD_DF = df_converter.RVbD_list_to_df(RVbD_dl) 
         wb.create_sheet('Recharge by Denomination')
         
         ws = wb['Recharge by Denomination']
@@ -453,7 +453,8 @@ def generate(sales_filename, report_dump_filename):
     
     # create filename
 
-    filename = generate_filename.generate_filename() + '.xlsx'
     parent_dir = 'output\\'
+    filename = generate_filename.generate_filename() + '.xlsx'
     wb.save(parent_dir + filename)
+    
     return filename
