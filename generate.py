@@ -353,7 +353,7 @@ def generate(sales_filename, report_dump_filename):
         CP_DF = CP_DF.pivot(index='Date',
                             columns='Product_Desc',
                             values='Revenue')
-
+        
         rows = dataframe_to_rows(CP_DF)
         for r_idx, row in enumerate(rows,1):
             for c_idx, value in enumerate(row,1):
@@ -427,7 +427,7 @@ def generate(sales_filename, report_dump_filename):
         row.append(Subscriptions[i])
         row.append(Balance_Transfer[i])
         row.append(Expired_Revenue[i])
-        row.append(Corporate_Plans[i])
+        row.append(Corporate_Plans[i]) 
         row.append(Others[i])
         table.append(row)
 

@@ -16,7 +16,7 @@ def runApp():
     os.remove(dirname+sales)
 
     # send report excel file to email list
-    sender.send_report(filename)
+    #sender.send_report(filename)
 
 if __name__ == "__main__":
     runApp()
