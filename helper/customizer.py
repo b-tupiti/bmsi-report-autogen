@@ -1655,7 +1655,7 @@ def customize_cp(ws):
     ft = Font(color=colors.WHITE,size=11,bold=True)
     
     # 1. Delete and Insert rows and columns
-    ws.delete_cols(2)
+    # ws.delete_cols(2)
     ws.delete_rows(2)
     ws['A1'].value = 'Entry Date'
     
@@ -1667,13 +1667,15 @@ def customize_cp(ws):
             cell.fill = fill
             cell.font = ft
             col_count += 1
-     
+    
+    
     # 3. Count number of generated rows
     row_count = 0
     for cell in ws['A']:
         if cell.value is None:
             break
         row_count += 1
+    
     
     # 4. Insert totals at the bottom
     for i in range(2,col_count + 2): # start at the second column and add an extra col
