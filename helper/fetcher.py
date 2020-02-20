@@ -27,6 +27,9 @@ def fetch_mailattachments():
                 attachments[0].SaveAsFile(os.getcwd()+ '\\' + 'input_files\\' + str(attachments[0].FileName))
                 attachments[1].SaveAsFile(os.getcwd()+ '\\' + 'input_files\\' + str(attachments[1].FileName[:-3]+'txt'))
                 
+                # set mail to read
+                # mail.Unread = False
+
             except:
                 print('Cannot save files from email. Check if the email \
                 has attachments or if it is the correct email.')

@@ -16,9 +16,10 @@ def generate_filename():
 
 
     else:
+        yesterday = datetime.strftime(datetime.now() - timedelta(1),'%d')
         month = datetime.now().strftime('%b')
         year = datetime.now().strftime('%Y')
-        period = month + '_' + first_of_the_month + '-' + today + '_' + year
+        period = month + '_' + first_of_the_month + '-' + yesterday + '_' + year
 
         filename =  default_str + period + ']'
     return filename
