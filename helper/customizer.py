@@ -2,6 +2,7 @@ import datetime
 from openpyxl.styles import colors, fills, PatternFill, Border, Side, Alignment, Protection, Font, GradientFill
 from openpyxl.utils import get_column_letter
 import numpy as np
+
 def customize_sales(ws):
 
     ws.delete_cols(1)
@@ -18,7 +19,21 @@ def customize_sales(ws):
     
     ws['B1'].fill = fill
     ws['B1'].font = ft
+
+    # Totals
+
+    fill = fills.PatternFill(patternType='solid',
+                                  fgColor=colors.Color(rgb='c4270c'))
+    ft = Font(color=colors.WHITE,size=12,bold=True)
+
+    ws['A' + str(_len + 1)].value = 'Total'
+    ws['B' + str(_len + 1)].value = '=SUM(B2:B' + str(_len) + ')' 
     
+    ws['A' + str(_len + 1)].fill = fill
+    ws['A' + str(_len + 1)].font = ft
+    ws['B' + str(_len + 1)].fill = fill
+    ws['B' + str(_len + 1)].font = ft
+
     #Borders and Alignments
     thin_border = Border(left=Side(style='thin'), 
                          right=Side(style='thin'), 
