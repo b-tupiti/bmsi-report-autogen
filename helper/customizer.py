@@ -1782,14 +1782,17 @@ def customize_rvbd(ws):
         if cell.value is None:
             break
         row_count += 1
+
     
     # 4. Insert totals at the bottom
     for i in range(2,col_count + 2): # start at the second column and add an extra col
+        col_total = 0
         col_letter = get_column_letter(i)
         ws[col_letter+str(row_count + 1)].fill = fill 
         ws[col_letter+str(row_count + 1)].font = ft
         ws[col_letter+str(row_count + 1)].value = '=SUM(' + col_letter + '2:' + col_letter + str(row_count) + ')'         
-    
+        
+
     # 5. Insert totals on the right side
     totals_column = get_column_letter(col_count+1)
     for i_row in range(2,row_count+1):
@@ -1827,6 +1830,61 @@ def customize_rvbd(ws):
             cell.border = thin_border
             cell.alignment = Alignment(horizontal="center",vertical="center")
     
+    ### SORTING #####
+
+    _length = len(ws['A'])
+    bottom_totals = []
+
+    for i in range(2, col_count + 1):
+        col_let = get_column_letter(i)
+        col_total = 0
+        for j in range(2,_length):
+            if not np.isnan(ws[col_let + str(j)].value):
+                col_total += ws[col_let + str(j)].value
+        bottom_totals.append(col_total)
+   
+    ws = bubbleSort(ws, bottom_totals)
+
+    
+    ### SORTING #####
+
+    return ws
+
+
+def bubbleSort(ws, bottom_totals):
+    
+    n = len(bottom_totals)
+    
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if bottom_totals[j] < bottom_totals[j+1]:
+                
+                ind1 = j + 2
+                ind2 = j + 3
+
+                lcl = get_column_letter(ind1)
+                rcl = get_column_letter(ind2)
+
+                left = []
+                right = []
+
+                for cell in ws[lcl]:
+                    left.append(cell.value)
+                
+                for cell in ws[rcl]:
+                    right.append(cell.value)
+                
+                for i in range(1,len(ws[lcl])):
+                    ws[lcl+str(i)].value = right[i-1]
+
+                for i in range(1,len(ws[rcl])):
+                    ws[rcl+str(i)].value = left[i-1]
+
+                bottom_totals[j],bottom_totals[j+1] = bottom_totals[j+1],bottom_totals[j]
+
+
+    print(bottom_totals) 
+
     return ws
 
 def customize_ocug_gsd(ws):
